@@ -34,25 +34,30 @@
             this.lblStar = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.btnSeach = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblTime = new System.Windows.Forms.Label();
-            this.gridCommodityTrade = new System.Windows.Forms.DataGridView();
             this.lblGoodsName = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.cboGoodsType = new System.Windows.Forms.ComboBox();
+            this.gridCommodityTrade = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tsmiAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCommodityTrade)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(501, 204);
             this.panel1.TabIndex = 0;
@@ -68,7 +73,6 @@
             this.tableLayoutPanel1.Controls.Add(this.lblStar, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtCode, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblName, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtName, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSeach, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnClear, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblTime, 2, 1);
@@ -76,6 +80,7 @@
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker2, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cboGoodsType, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -125,14 +130,6 @@
             this.lblName.TabIndex = 2;
             this.lblName.Text = "商品类型：";
             // 
-            // txtName
-            // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(378, 15);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(120, 21);
-            this.txtName.TabIndex = 5;
-            // 
             // btnSeach
             // 
             this.btnSeach.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -162,16 +159,6 @@
             this.lblTime.Size = new System.Drawing.Size(65, 12);
             this.lblTime.TabIndex = 8;
             this.lblTime.Text = "结束时间：";
-            // 
-            // gridCommodityTrade
-            // 
-            this.gridCommodityTrade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridCommodityTrade.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridCommodityTrade.Location = new System.Drawing.Point(0, 204);
-            this.gridCommodityTrade.Name = "gridCommodityTrade";
-            this.gridCommodityTrade.RowTemplate.Height = 23;
-            this.gridCommodityTrade.Size = new System.Drawing.Size(501, 580);
-            this.gridCommodityTrade.TabIndex = 1;
             // 
             // lblGoodsName
             // 
@@ -207,6 +194,56 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(120, 21);
             this.dateTimePicker2.TabIndex = 13;
             // 
+            // cboGoodsType
+            // 
+            this.cboGoodsType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboGoodsType.FormattingEnabled = true;
+            this.cboGoodsType.Location = new System.Drawing.Point(378, 15);
+            this.cboGoodsType.Name = "cboGoodsType";
+            this.cboGoodsType.Size = new System.Drawing.Size(120, 20);
+            this.cboGoodsType.TabIndex = 14;
+            // 
+            // gridCommodityTrade
+            // 
+            this.gridCommodityTrade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridCommodityTrade.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridCommodityTrade.Location = new System.Drawing.Point(0, 229);
+            this.gridCommodityTrade.Name = "gridCommodityTrade";
+            this.gridCommodityTrade.ReadOnly = true;
+            this.gridCommodityTrade.RowTemplate.Height = 23;
+            this.gridCommodityTrade.Size = new System.Drawing.Size(501, 555);
+            this.gridCommodityTrade.TabIndex = 1;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAdd,
+            this.tsmiEdit,
+            this.tsmiDelete});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(501, 25);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // tsmiAdd
+            // 
+            this.tsmiAdd.Name = "tsmiAdd";
+            this.tsmiAdd.Size = new System.Drawing.Size(44, 21);
+            this.tsmiAdd.Text = "新增";
+            // 
+            // tsmiEdit
+            // 
+            this.tsmiEdit.Name = "tsmiEdit";
+            this.tsmiEdit.Size = new System.Drawing.Size(44, 21);
+            this.tsmiEdit.Text = "修改";
+            // 
+            // tsmiDelete
+            // 
+            this.tsmiDelete.Name = "tsmiDelete";
+            this.tsmiDelete.Size = new System.Drawing.Size(44, 21);
+            this.tsmiDelete.Text = "删除";
+            // 
             // CommodityTradeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -214,13 +251,18 @@
             this.ClientSize = new System.Drawing.Size(501, 784);
             this.Controls.Add(this.gridCommodityTrade);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "CommodityTradeList";
             this.Text = "商品交易清单";
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCommodityTrade)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -232,7 +274,6 @@
         private System.Windows.Forms.Label lblStar;
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnSeach;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label lblTime;
@@ -241,5 +282,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox cboGoodsType;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAdd;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEdit;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDelete;
     }
 }
